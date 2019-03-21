@@ -1,0 +1,18 @@
+# editor config
+.idea/
+.vscode/
+
+# node modules
+node_modules/
+
+# useless files
+.DS_Store
+
+# credentials and private config
+config.json
+
+# compile directory
+dist/
+
+# npm package lock
+package-lock.json
