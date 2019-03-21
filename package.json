@@ -4,7 +4,8 @@
   "description": "A chatbot for programming/coding/development based discord servers.",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start.js"
   },
   "keywords": [
     "discord",
