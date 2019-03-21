@@ -1,0 +1,13 @@
+{
+  "botToken": "",
+  "commandPrefix": "!",
+  "channels": {
+    "joins": "",
+    "tickets": ""
+  },
+  "roles": {
+    "admin": "",
+    "mod": "",
+    "staff": []
+  }
+}
