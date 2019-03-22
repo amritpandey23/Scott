@@ -17,30 +17,47 @@ client.on('message', (message) => {
     .split(/ +/g);
   // command name
   const commandName = args.shift().toLowerCase();
-  // check if file with commandName exist
-  if (!args || args.length < 1 || args[0].toLowerCase() === '--help') {
-    fs.readFile(
-      path.join(__dirname, 'commands/manuals', `${commandName}.txt`),
-      {encoding: 'utf8'},
-      (err, data) => {
-        if (err) throw err;
-        return message.channel.send(data);
+  // scan command directory
+  fs.readdir(path.join(__dirname, 'commands'), (err, files) => {
+    if (files.indexOf(`${commandName}.js`) === -1) {
+      // check if file with command exist
+      return message.channel.send(
+        `Command named *${commandName}* does not exist!`
+      );
+    } else if (!args || args.length < 1 || args[0].toLowerCase() === '--help') {
+      // if no argument is passed with a valid command name, show its manual
+      fs.readdir(path.join(__dirname, 'commands/manuals'), (err, files) => {
+        // if no manual is found for the given command, display notice.
+        if (files.indexOf(`${commandName}.txt`) === -1)
+          return message.channel.send(
+            '```Manual not found, please ask server administrator to update manual for this command.```'
+          );
+        // show manual text for the command
+        else
+          fs.readFile(
+            path.join(__dirname, 'commands/manuals', `${commandName}.txt`),
+            {encoding: 'utf8'},
+            (err, data) => {
+              if (err) throw err;
+              return message.channel.send(data);
+            }
+          );
+      });
+    } else {
+      // valid command is run with valid arguments
+      try {
+        require(`./commands/${commandName}`).run(client, message, args);
+      } catch (err) {
+        console.error(err);
       }
-    );
-  } else {
-    try {
-      require(`./commands/${commandName}`).run(client, message, args);
-    } catch (err) {
-      console.error(err);
-      message.channel.send(`Command named ${commandName} does not exist!`);
     }
-  }
+  });
 });
 
 // read existing events from the events directory
 fs.readdir('./events/', (err, eventFiles) => {
   if (err) return console.error(err);
-
+  // scan files in event directory and load them here.
   eventFiles.forEach((file) => {
     if (!file.endsWith === '.js') return;
     const eventName = file.split('.')[0];
