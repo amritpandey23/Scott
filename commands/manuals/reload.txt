@@ -5,11 +5,11 @@ NAME
 USAGE
     pass the name of command you want to reload after !reload.
     
-    >>> !reload announce
+    >>> <prefix>reload announce
 
     reload command can also reload more than one command at
     a time, to do this, pass the name of commands separated
     with spaces.
 
-    >>> !reload announce help hello poll
+    >>> <prefix>reload announce help hello poll
 ```

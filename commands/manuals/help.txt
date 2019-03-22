@@ -1,0 +1,22 @@
+```
+                   DISCORD BOT v1.0
+
+List of available commands
+    1. announce         send an annoucement to the channel
+    2. reload           clear caches of commands
+    3. help             display manual for a command
+
+USAGE
+    To read manual of a command, type in the command name
+    after 'bot help' or put a '--help' flag after command
+    name.
+
+    >>> <prefix>help announce
+    >>> <prefix>announce --help
+
+PREFIX
+    prefix is a special symbol used to identify commands by
+    bots. It can be manually set for each bot, default prefix 
+    is 'bot '. Please contact your sever administrator to 
+    know the bot's prefix.
+```

@@ -1,0 +1,14 @@
+```
+NAME
+    announce -- makes an announcement on the channel
+
+DESCRIPTION
+    create a nicely formated message to send as an 
+    announcement on the channel.
+
+USAGE
+    pass in the message after the command to create
+    and send an announcement.
+
+    >>> <prefix>announce This is an announcement message.
+```
