@@ -9,5 +9,11 @@
     "admin": "",
     "mod": "",
     "staff": []
+  },
+  "database": {
+    "host": "localhost",
+    "dbname": "",
+    "user": "",
+    "password": ""
   }
 }
