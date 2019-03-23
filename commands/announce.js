@@ -1,3 +1,10 @@
+/**
+ * command name: announce
+ * description: creates an text announcement on the channel.
+ * author: Amrit Pandey
+ * dependencies: Discord.RichEmbed, auth module
+ */
+
 const Discord = require('discord.js');
 const richEmbed = Discord.RichEmbed;
 
