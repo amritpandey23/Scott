@@ -1,18 +1,24 @@
 {
-  "botToken": "",
-  "commandPrefix": "!",
-  "channels": {
-    "joins": "",
-    "tickets": ""
+  "client": {
+    "token": "",
+    "secret": "",
+    "id": "",
+    "commandPrefix": "!",
+    "maintainerID": ""
   },
-  "roles": {
-    "admin": "",
-    "mod": "",
-    "staff": []
-  },
-  "owner": {
-    "guild": "",
-    "maintainer": ""
+  "guild": {
+    "ownerID": "",
+    "channels": {
+      "joins": "",
+      "tickets": "",
+      "general": "",
+      "admin": ""
+    },
+    "roles": {
+      "admin": "",
+      "mod": "",
+      "staff": []
+    }
   },
   "database": {
     "host": "localhost",
