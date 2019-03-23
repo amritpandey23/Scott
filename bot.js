@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const auth = require('./modules/auth');
+const cmdFilter = require('./modules/cmdFilter');
 const client = new Discord.Client();
 
 // run existing commands from commands directory on each message event
@@ -47,6 +48,15 @@ client.on('message', (message) => {
           );
       });
     } else {
+      if (
+        !cmdFilter(
+          commandName,
+          message.guild.members.find('id', message.author.id)
+        )
+      )
+        return message.channel.send(
+          'You are not autorized to use this command.'
+        );
       // valid command is run with valid arguments
       try {
         require(`./commands/${commandName}`).run(client, message, args);
