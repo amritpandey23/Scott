@@ -5,7 +5,8 @@
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon start.js"
+    "start": "nodemon start.js",
+    "deploy": "gcloud app deploy"
   },
   "keywords": [
     "discord",
