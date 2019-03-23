@@ -10,6 +10,10 @@
     "mod": "",
     "staff": []
   },
+  "owner": {
+    "guild": "",
+    "maintainer": ""
+  },
   "database": {
     "host": "localhost",
     "dbname": "",
