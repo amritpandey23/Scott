@@ -4,11 +4,16 @@ NAME
 
 DESCRIPTION
     create a nicely formated message to send as an 
-    announcement on the channel.
+    announcement on the channel. Requires link preview
+    feature to be turned on viewer's client.
 
 USAGE
-    pass in the message after the command to create
-    and send an announcement.
+    pass the category of announcement viz. regular,
+    success, danger and warning followed by the
+    message. You can use following in message text:
+        - markdown: **bold**
+        - link embed: [link](https://google.com)
+        - emojis: 🙂
 
-    >>> <prefix>announce This is an announcement message.
+    >>> <prefix>announce regular <announcement message>.
 ```
