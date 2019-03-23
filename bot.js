@@ -2,17 +2,20 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
-const config = require('./config.json');
+const auth = require('./modules/auth');
 const client = new Discord.Client();
 
 // run existing commands from commands directory on each message event
 client.on('message', (message) => {
   // If message does not start with command prefix, ignore them.
-  if (!message.content.startsWith(config.commandPrefix) || message.author.bot)
+  if (
+    !message.content.startsWith(auth.getCommandPrefix()) ||
+    message.author.bot
+  )
     return;
   // arguments passed with the messages.
   const args = message.content
-    .slice(config.commandPrefix.length)
+    .slice(auth.getCommandPrefix().length)
     .trim()
     .split(/ +/g);
   // command name
