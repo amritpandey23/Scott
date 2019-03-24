@@ -31,7 +31,7 @@ exports.getChannelByName = (channelName, guild) => {
         guild.name
       } discord server.`
     );
-    return {};
+    return false;
   }
 
   return chf;
