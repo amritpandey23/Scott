@@ -1,21 +1,21 @@
 const config = require('../configurations/config.json');
 
-// validation methods
-exports.isAdmin = (member) =>
+const isAdmin = (member) =>
   member.roles.find((role) => role.id === config.guild.roles.admin);
 
-exports.isMod = (member) =>
-  member.roles.find((role) => role.id === config.guild.roles.mod);
+// validation methods
+const isMod = (exports.isMod = (member) =>
+  member.roles.find((role) => role.id === config.guild.roles.mod));
 
 // get data from config
-exports.getBotToken = () => config.client.token;
-exports.getMaintainerId = () => config.client.maintainerID;
-exports.getCommandPrefix = () => config.client.commandPrefix;
+const getBotToken = () => config.client.token;
+const getMaintainerId = () => config.client.maintainerID;
+const getCommandPrefix = () => config.client.commandPrefix;
 
-exports.getChannelById = (_id, guild) =>
+const getChannelById = (_id, guild) =>
   guild.channels.find((ch) => ch.id === _id);
 
-exports.getChannelByName = (channelName, guild) => {
+const getChannelByName = (channelName, guild) => {
   if (config.guild.channels[channelName.toLowerCase()])
     return guild.channels.find(
       (ch) => ch.id === config.guild.channels[channelName]
@@ -35,4 +35,14 @@ exports.getChannelByName = (channelName, guild) => {
   }
 
   return chf;
+};
+
+module.exports = {
+  isAdmin,
+  isMod,
+  getBotToken,
+  getMaintainerId,
+  getCommandPrefix,
+  getChannelById,
+  getChannelByName
 };
