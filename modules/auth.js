@@ -12,5 +12,27 @@ exports.getBotToken = () => config.client.token;
 exports.getMaintainerId = () => config.client.maintainerID;
 exports.getCommandPrefix = () => config.client.commandPrefix;
 
-exports.getWelcomeChannel = () => config.guild.channels.joins;
-exports.getGeneralChannel = () => config.guild.channels.general;
+exports.getChannelById = (_id, guild) =>
+  guild.channels.find((ch) => ch.id === _id);
+
+exports.getChannelByName = (channelName, guild) => {
+  if (config.guild.channels[channelName.toLowerCase()])
+    return guild.channels.find(
+      (ch) => ch.id === config.guild.channels[channelName]
+    );
+
+  const chf = guild.channels.find(
+    (ch) => ch.name === channelName.toLowerCase()
+  );
+
+  if (!chf) {
+    console.error(
+      `Error: No channel with the name ${channelName} was found in ${
+        guild.name
+      } discord server.`
+    );
+    return {};
+  }
+
+  return chf;
+};
