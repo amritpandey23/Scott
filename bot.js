@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
-const auth = require('./modules/auth');
-const cmdFilter = require('./modules/cmdFilter');
+const { auth, cmdFilter } = require('./modules');
 const client = new Discord.Client();
 
 // run existing commands from commands directory on each message event
@@ -40,7 +39,7 @@ client.on('message', (message) => {
         else
           fs.readFile(
             path.join(__dirname, 'commands/manuals', `${commandName}.txt`),
-            {encoding: 'utf8'},
+            { encoding: 'utf8' },
             (err, data) => {
               if (err) throw err;
               return message.channel.send(data);
