@@ -1,11 +1,15 @@
 const config = require('../configurations/config.json');
 
-const isAdmin = (member) =>
-  member.roles.find((role) => role.id === config.guild.roles.admin);
+const fs = require('fs');
+const path = require('path');
 
-// validation methods
-const isMod = (exports.isMod = (member) =>
-  member.roles.find((role) => role.id === config.guild.roles.mod));
+const Discord = require('discord.js');
+const permission = new Discord.Permissions();
+
+const isAdmin = (member) => member.hasPermission(permission.ADMINISTRATOR);
+
+// this is a lame way to check if a member is a moderator.
+const isMod = (member) => member.hasPermission(permission.BAN_MEMBERS);
 
 // get data from config
 const getBotToken = () => config.client.token;
