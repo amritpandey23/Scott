@@ -48,10 +48,12 @@ class CommandHandler {
     if (!commandToRun) return;
     if (!this.isAuthorSu() && commandList.su[this.name])
       return this.msg.channel.send(
-        'You are not authorized to run this command.'
+        "You are not authorized to run 'su' commands. To know more send `!help su`."
       );
     if (!this.args || this.args.length < 1) {
-      this.msg.channel.send(`No argument passed!`);
+      this.msg.reply(
+        'I cannot run empty commands. To read command manual, send `!help <command-name>`.'
+      );
       return this.sendManual();
     }
     return require(`../commands/${this.name}.js`).run(

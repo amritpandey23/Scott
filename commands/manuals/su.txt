@@ -1,0 +1,6 @@
+```
+SUPER USER COMMANDS
+    There are few commands which are only accessible to administrator
+    and moderators. If you are a moderator you should atleast have the
+    permission to ban members to run super user commands.
+```
