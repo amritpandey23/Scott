@@ -18,9 +18,9 @@ exports.run = (client, message, args) => {
     if (files.indexOf(`${commandReq}.txt`) !== -1) {
       fs.readFile(
         path.join(__dirname, 'manuals', `${commandReq}.txt`),
-        {encoding: 'utf8'},
+        { encoding: 'utf8' },
         (err, data) => {
-          message.channel.send(data);
+          message.author.send(data);
         }
       );
     } else
