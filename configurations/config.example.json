@@ -1,24 +1,10 @@
 {
   "client": {
-    "token": "",
+    "botToken": "NTIyMDI1MjQ0NDQyMDk5NzI0.D3oS9A.SSGVkoZ-Cg-f9qDru9EmfYrgAik",
     "secret": "",
-    "id": "",
-    "commandPrefix": "!",
+    "clientId": "",
+    "botPrefix": "$",
     "maintainerID": ""
-  },
-  "guild": {
-    "ownerID": "",
-    "channels": {
-      "joins": "",
-      "tickets": "",
-      "general": "",
-      "admin": ""
-    },
-    "roles": {
-      "admin": "",
-      "mod": "",
-      "staff": []
-    }
   },
   "database": {
     "host": "localhost",
