@@ -1,5 +1,4 @@
 const commandList = require('../configurations/commands');
-const auth = require('./auth');
 const fs = require('fs');
 const path = require('path');
 
@@ -8,7 +7,7 @@ class CommandHandler {
     this.msg = msg;
     this.client = client;
     this.args = msg.content
-      .slice(auth.getCommandPrefix().length)
+      .slice(require('../configurations/config.json').client.botPrefix.length)
       .trim()
       .split(/ +/g);
     this.name = this.args.shift().toLowerCase();
