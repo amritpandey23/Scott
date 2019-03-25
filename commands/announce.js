@@ -8,7 +8,7 @@
 const Discord = require('discord.js');
 const richEmbed = Discord.RichEmbed;
 
-const auth = require('../modules/auth');
+const { Auth } = require('../modules');
 // message categories, emoji symbol and reactions
 const messageTypes = {
   danger: [0xc93a2d, '⛔️', '🙁'],
@@ -32,7 +32,9 @@ exports.run = (client, message, args) => {
   if (!messageTypes[messageTypeUsed])
     return message.channel.send(
       '```' +
-        `Error: unrecognized announcement type '${messageTypeUsed}'.\nFor help run '${auth.getCommandPrefix()}help announce' ` +
+        `Error: unrecognized announcement type '${messageTypeUsed}'.\nFor help run '${
+          Auth.botPrefix
+        }help announce' ` +
         '```'
     );
   // message formatting with discord rich embed
@@ -48,7 +50,7 @@ exports.run = (client, message, args) => {
     );
   // send message and add reaction
   message.channel
-    .send({embed})
+    .send({ embed })
     .then((msg) => msg.react(messageTypes[messageTypeUsed][2]))
     .catch((err) => console.error(err));
 };

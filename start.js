@@ -1,4 +1,4 @@
 const bot = require('./bot');
-const auth = require('./modules/auth');
+const { Auth } = require('./modules');
 
-bot.login(auth.getBotToken());
+bot.login(Auth.botToken);

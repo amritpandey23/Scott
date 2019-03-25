@@ -1,7 +1,7 @@
-const { auth } = require('../modules');
+const { Auth } = require('../modules');
 
 exports.run = (client, member) => {
-  let welcomeChannel = auth.getChannelByName('welcome', member.guild);
+  let welcomeChannel = Auth.findChannelByName('welcome', member.guild);
   welcomeChannel
     ? welcomeChannel.send(`Welcome to the server ${member}`)
     : () => {};
