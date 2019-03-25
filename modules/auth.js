@@ -3,13 +3,10 @@ const config = require('../configurations/config.json');
 const fs = require('fs');
 const path = require('path');
 
-const Discord = require('discord.js');
-const permission = new Discord.Permissions();
-
-const isAdmin = (member) => member.hasPermission(permission.ADMINISTRATOR);
+const isAdmin = (member) => member.hasPermission('ADMINISTRATOR');
 
 // this is a lame way to check if a member is a moderator.
-const isMod = (member) => member.hasPermission(permission.BAN_MEMBERS);
+const isMod = (member) => member.hasPermission('BAN_MEMBERS');
 
 // get data from config
 const getBotToken = () => config.client.token;
