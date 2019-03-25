@@ -14,8 +14,4 @@ fs.readdir('./events/', (err, eventFiles) => {
   });
 });
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`);
-});
-
 module.exports = client;
