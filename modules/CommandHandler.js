@@ -6,12 +6,14 @@ class CommandHandler {
   constructor(client, msg) {
     this.msg = msg;
     this.client = client;
-    this.args = msg.content
+    this.args = this.msg.content
       .slice(require('../configurations/config.json').client.botPrefix.length)
       .trim()
       .split(/ +/g);
     this.name = this.args.shift().toLowerCase();
-    this.author = msg.guild.members.find((mem) => mem.id === msg.author.id);
+    this.author = this.msg.guild.members.find(
+      (mem) => mem.id === msg.author.id
+    );
   }
   isEnabled() {
     const command = this.validate();
