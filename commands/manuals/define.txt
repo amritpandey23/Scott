@@ -1,0 +1,31 @@
+```
+NAME
+  define -- provide definition for words from web.
+
+DESCRIPTION
+  !define command gets abstract information on a word from
+  duckduckgo and wikipedia.
+
+COMMANDS
+  1) !define <search-text>         DuckDuckGo instant answer.
+  2) !define wiki <search-text>    Wikipedia definition.
+  3) !define -h[--help]            Provides help text.
+
+EXAMPLES
+  > !define yellow stone
+  > !define wiki object oriented programming
+  
+GUIDE
+  !define will only show definition on receiving exact info,
+  in case a word have more than one meaning, related topics
+  (not more than three) will be displayed. To get more acc-
+  urate results pass more keywords in search phrase sepearted  
+  with spaces. Eg: 'react' means many things but if you want 
+  to get definition for 'reactjs' use command like this:
+  > !define reactjs
+          OR
+  > !define wiki react javascript
+  For now, !define only provide information about things, places,
+  events, news etc. and does not provide meaning of the words from
+  english dictionary. DDG bang redirects will also not work here.
+```
