@@ -5,16 +5,19 @@ class Authenticator {
     this.clientId = config.client.clientId;
   }
 
-  isAdmin = (member) => member.hasPermission('ADMINISTRATOR');
+  isAdmin(member) {
+    member.hasPermission('ADMINISTRATOR');
+  }
 
-  checkPermission = (member, permissionName) =>
+  checkPermission(member, permissionName) {
     member.hasPermission(permissionName);
+  }
 
-  findChannelById = (_id, guild) => {
+  findChannelById(_id, guild) {
     guild.channels.find((ch) => ch.id === _id);
-  };
+  }
 
-  findChannelByName = (channelName, guild) => {
+  findChannelByName(channelName, guild) {
     if (config.guild.channels[channelName.toLowerCase()])
       return guild.channels.find(
         (ch) => ch.id === config.guild.channels[channelName]
@@ -34,6 +37,6 @@ class Authenticator {
     }
 
     return chf;
-  };
+  }
 }
 module.exports = Authenticator;
