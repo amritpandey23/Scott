@@ -1,4 +1,7 @@
+const Authenticator = require('./Authenticator');
+const CommandHandler = require('./CommandHandler');
+
 module.exports = {
-  auth: require('./auth'),
-  CommandHandler: require('./CommandHandler')
+  Auth: new Authenticator(require('../configurations/config.json')),
+  CommandHandler
 };
