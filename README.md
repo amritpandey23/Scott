@@ -34,7 +34,7 @@ NOTE: Google's App engine is much better than CE for managing the bot but AE oft
   3. Install `nvm`, [know more](https://github.com/creationix/nvm#installation-and-update)
   4. Install nodejs: `nvm install v10.15.3`
   5. Install pm2: `npm install -g pm2`
-  6. [Install](##installing) the bot.
+  6. [Install](#installing) the bot.
   7. Deploy the bot with pm2 `pm2 start start.js`
 
 Your bot is now online and now can be invited via 0Auth to any number of servers. Read the entire procedure to deploy an app on GCP Compute Engine [here](https://medium.com/google-cloud/deploying-a-node-js-app-on-google-cloud-8419de45e5dc)
