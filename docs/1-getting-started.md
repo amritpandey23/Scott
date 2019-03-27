@@ -13,14 +13,14 @@ This pages have information on setting up and running bot locally on your system
 
 ## Running
 
-1. If you are developing, you can run the bot with `npm run watch`. This will watch for changes and restart the bot for every change.
-2. Run the bot with `npm start`
+1. If you are developing, you should run `npm run watch`. This will watch for changes and restart the bot.
+2. Or. Run the bot with `npm start`
 
 ## Developing
 
-- [Core Development](core-development)
-- [Create a new command](create-command)
-- [Add a new event](add-event)
+- [Core Development](Core-Development)
+- [Create a new command](Create-new-Commands)
+- [Add a new event](Add-new-Events)
 
 ## Hosting
 
@@ -33,8 +33,8 @@ NOTE: Google's App engine is much better than CE for managing the bot but AE oft
   2. SSH into your instance
   3. Install `nvm`, [know more](https://github.com/creationix/nvm#installation-and-update)
   4. Install nodejs: `nvm install v10.15.3`
-  5. Install pm2: npm install -g pm2
-  6. Execute the project [install](##installing) steps given above.
-  7. Start the bot with pm2 `pm2 start start.js`
+  5. Install pm2: `npm install -g pm2`
+  6. [Install](##installing) the bot.
+  7. Deploy the bot with pm2 `pm2 start start.js`
 
-Your bot is now online and now can be added to any number of servers. Read the entire procedure [here](https://medium.com/google-cloud/deploying-a-node-js-app-on-google-cloud-8419de45e5dc)
+Your bot is now online and now can be invited via 0Auth to any number of servers. Read the entire procedure to deploy an app on GCP Compute Engine [here](https://medium.com/google-cloud/deploying-a-node-js-app-on-google-cloud-8419de45e5dc)
