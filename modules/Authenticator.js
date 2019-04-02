@@ -6,15 +6,15 @@ class Authenticator {
   }
 
   isAdmin(member) {
-    member.hasPermission('ADMINISTRATOR');
+    return member.hasPermission('ADMINISTRATOR');
   }
 
   checkPermission(member, permissionName) {
-    member.hasPermission(permissionName);
+    return member.hasPermission(permissionName);
   }
 
   findChannelById(_id, guild) {
-    guild.channels.find((ch) => ch.id === _id);
+    return guild.channels.find((ch) => ch.id === _id);
   }
 
   findChannelByName(channelName, guild) {
