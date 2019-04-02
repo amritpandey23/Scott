@@ -1,3 +1,3 @@
 exports.run = (client, _) => {
-  console.log(`Logged in as ${client.user.tag}`);
+  process.stdout.write(`Logged in as ${client.user.tag}\n`);
 };
