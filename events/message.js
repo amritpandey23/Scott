@@ -4,6 +4,7 @@ const { Auth, CommandHandler } = require('../modules');
 exports.run = (client, message) => {
   // If message does not start with command prefix, ignore them.
   if (!message.content.startsWith(Auth.botPrefix) || message.author.bot) return;
+  if (message.channel.type === 'dm') return;
 
   const commandHandler = new CommandHandler(client, message);
   commandHandler.run();
