@@ -1,0 +1,14 @@
+```
+NAME
+    bot -- general and commands information.
+
+USAGE
+    to get information on the bot such as uptime, tag,
+    ID etc. run:
+    >>> <prefix>bot info
+
+    to get list of available commands, run:
+    >>> <prefix>bot list-commands
+        OR
+    >>> <prefix>bot admin-commands
+```
