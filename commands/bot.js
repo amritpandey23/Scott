@@ -33,12 +33,12 @@ const timeConversion = (millisec) => {
 const commandListEmbed = () => {
   const embed = new RichEmbed();
   embed
-    .setTitle('Mr. Scott v1.2 | Admin Commands')
+    .setTitle('Mr. Scott v1.2 | Commands')
     .setDescription(
       '*Find all the commands grouped by category below. Commands are followed by valid arguments \
     enclosed between `<` and `>`, arguments prefixed with `?` are optional.*'
     )
-    .setColor(0xcc4063);
+    .setColor(0xdfb91f);
 
   return embed;
 };
@@ -46,7 +46,7 @@ const commandListEmbed = () => {
 const botInfo = (message, args, client) => {
   const embed = new RichEmbed();
   embed
-    .setColor(0xf4e242)
+    .setColor(0xdfb91f)
     .setDescription(
       `A robot made for programming/coding/development discord servers. Run \`${
         Auth.botPrefix
