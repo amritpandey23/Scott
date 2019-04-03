@@ -31,6 +31,12 @@ module.exports = {
       description: 'gets information about bot',
       usage: '<information type>',
       isEnabled: true
+    },
+    gupt: {
+      category: '👻 fun',
+      description: 'send anonymous message to anyone',
+      usage: '<user id> <message>',
+      isEnabled: true
     }
   }
 };
