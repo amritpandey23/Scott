@@ -1,0 +1,28 @@
+```
+NAME
+    gupt -- send anonymous message to anyone.
+
+USAGE
+    Sometimes you will want to send an anonymous
+    message, Mr. Scott can do that for you. To
+    send an anonymous message to anyone in discord,
+    you'll need their ID. To get user ID, just right
+    click on the user avatar, and select 'Copy ID'.
+    On phone, tap user avatar, scroll to the bottom
+    of the menu and select 'Copy ID'.
+
+    To send the message, just type your message in
+    following manner.
+
+    >>> <prefix>gupt 274434863711518722 I love you.
+
+    NOTE: Although this message will be deleted as
+    soon as you run it on a server, it is wise to 
+    use it from DM channel. 
+
+    Please do not use this command for spamming
+    purposes, anyone found using it for spam will
+    be blocked from using the bot in future. If
+    you find someone spamming you please report 
+    it in support server: https://discord.gg/XnjpKkM
+```
