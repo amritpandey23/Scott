@@ -45,7 +45,7 @@ exports.run = (client, message, args) => {
     .setColor(messageTypes[messageTypeUsed][0])
     .setTimestamp()
     .setFooter(
-      `This announcement is created by ${message.author.username}`,
+      `This announcement was created by ${message.author.username}`,
       message.author.avatarURL
     );
   // send message and add reaction
