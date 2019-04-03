@@ -1,10 +1,11 @@
+require('colors');
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
 
 // read existing events from the events directory
 fs.readdir('./events/', (err, eventFiles) => {
-  if (err) return console.error(err);
+  if (err) return process.stdout.write(err);
   // scan files in event directory and load them here.
   eventFiles.forEach((file) => {
     if (!file.endsWith === '.js') return;

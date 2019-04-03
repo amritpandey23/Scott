@@ -1,3 +1,5 @@
+require('colors');
+
 const commandList = require('../configurations/commands');
 const fs = require('fs');
 const path = require('path');
@@ -57,11 +59,31 @@ class CommandHandler {
       );
       return this.sendManual();
     }
-    return require(`../commands/${this.name}.js`).run(
+    require(`../commands/${this.name}.js`).run(
       this.client,
       this.msg,
       this.args
     );
+    return this.logUsage();
+  }
+
+  logUsage() {
+    const log = `NAME: ${this.name}, ARGUMENTS: [${this.args.join(
+      ', '
+    )}], BY: {${this.author.id}, ${this.author.user.username}}, GUILD: {${
+      this.msg.guild.id
+    }, ${this.msg.guild.name}}, ON: ${new Date().toString()}\n`;
+
+    const logFilePath = path.join(__dirname, '../logs/command-activity.txt');
+
+    fs.appendFile(logFilePath, log, (err) => {
+      if (err) throw err;
+      process.stdout.write(
+        `COMMAND USED: ${
+          this.msg.content.magenta
+        } ${new Date().toDateString()}\n`.gray
+      );
+    });
   }
 }
 

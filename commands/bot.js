@@ -129,8 +129,5 @@ const listAvailableCommands = (message, args, client) => {
   message.channel.send({ embed });
 };
 
-exports.run = (client, message, args) => {
-  const commandName = args[0];
-  args.shift();
-  runUserCommand(message, args, commandName, client);
-};
+exports.run = (client, message, args) =>
+  runUserCommand(message, args, args[0], client);
