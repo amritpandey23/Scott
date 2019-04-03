@@ -65,6 +65,11 @@ const botInfo = (message, args, client) => {
 };
 
 const listAdminCommands = (message, args, client) => {
+  if (message.channel.type === 'dm')
+    return message.channel.send(
+      'Admin commands only works in server, you cannot use admin commands in DMs.'
+    );
+
   const member = message.guild.members.find(
     (mem) => mem.id === message.author.id
   );
