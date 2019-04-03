@@ -23,12 +23,12 @@ module.exports = {
     define: {
       category: '🌐 web',
       description: 'provides definition for words from web',
-      usage: '<search string>',
+      usage: '?wiki <search string>',
       isEnabled: true
     },
     bot: {
       category: '🛠 utility',
-      description: 'gets information on bot',
+      description: 'gets information about bot',
       usage: '<information type>',
       isEnabled: true
     }
