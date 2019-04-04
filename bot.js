@@ -8,8 +8,11 @@ const bot = new Client();
 
 const eventHandler = new EventHandler(bot);
 eventHandler.load();
-for (event of Object.keys(events)) {
-  eventHandler.onEvent(event);
+for (const e of Object.keys(events)) {
+  bot.on(e, (...args) => {
+    eventHandler.onEvent(e, ...args);
+    eventHandler.logEvent(e);
+  });
 }
 
 module.exports = bot;

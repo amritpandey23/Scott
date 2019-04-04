@@ -27,14 +27,12 @@ class EventHandler {
     );
   }
 
-  async onEvent(eventName) {
+  async onEvent(eventName, ...args) {
     if (!this._cache[eventName])
       return process.stdout.write(`No event created for ${eventName}\n`.red);
+
     for (const eventFile of Object.keys(this._cache[eventName])) {
-      this.client.on(eventName, (...args) => {
-        this._cache[eventName][eventFile].handle(...args);
-        this.logEvent(eventName);
-      });
+      this._cache[eventName][eventFile].handle(...args);
     }
   }
 }
