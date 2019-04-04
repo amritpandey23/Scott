@@ -17,25 +17,28 @@ class CommandHandler {
       (mem) => mem.id === msg.author.id
     );
   }
+
   isEnabled() {
     const command = this.validate();
     return command && command.isEnabled;
   }
+
   isAuthorSu() {
     return (
       this.author.hasPermission('ADMINISTRATOR') ||
-      this.author.hasPermission('BAN_MEMBERS')
+      this.author.hasPermission('MANAGE_MESSAGES')
     );
   }
+
   sendManual() {
     fs.readdir(path.join(__dirname, '../commands/manuals'), (err, manuals) => {
-      if (err) return console.error(err);
+      if (err) throw `${err}`.red;
       if (manuals.indexOf(`${this.name}.txt`) !== -1) {
         fs.readFile(
           path.join(__dirname, '../commands/manuals', `${this.name}.txt`),
           { encoding: 'utf8' },
           (err, data) => {
-            if (err) return console.error(err);
+            if (err) throw `${err}`.red;
             return this.author.send(data);
           }
         );
@@ -43,9 +46,11 @@ class CommandHandler {
     });
     return '';
   }
+
   validate() {
     return commandList.su[this.name] || commandList.gen[this.name];
   }
+
   run() {
     const commandToRun = this.validate();
     if (!commandToRun) return;
@@ -68,22 +73,23 @@ class CommandHandler {
   }
 
   logUsage() {
-    const log = `NAME: ${this.name}, ARGUMENTS: [${this.args.join(
+    const logMessage = `COMMAND: ${this.name}, ARGUMENTS: [${this.args.join(
       ', '
     )}], BY: {${this.author.id}, ${this.author.user.username}}, GUILD: {${
       this.msg.guild.id
     }, ${this.msg.guild.name}}, ON: ${new Date().toString()}\n`;
 
-    const logFilePath = path.join(__dirname, '../logs/command-activity.txt');
-
-    fs.appendFile(logFilePath, log, (err) => {
-      if (err) throw err;
-      process.stdout.write(
-        `COMMAND USED: ${
-          this.msg.content.magenta
-        } ${new Date().toDateString()}\n`.gray
-      );
-    });
+    fs.appendFile(
+      path.join(__dirname, '../logs/command-activity.txt'),
+      logMessage,
+      (err) => {
+        if (err) throw err;
+        process.stdout.write(
+          `COMMAND: ${this.msg.content.magenta} ${new Date().toDateString()}\n`
+            .gray
+        );
+      }
+    );
   }
 }
 

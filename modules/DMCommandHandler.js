@@ -13,10 +13,12 @@ class DMCommandHandler {
     this.name = this.args.shift().toLowerCase();
     this.author = msg.author;
   }
+
   isEnabled() {
     const command = this.validate();
     return command && command.isEnabled;
   }
+
   sendManual() {
     fs.readdir(path.join(__dirname, '../commands/manuals'), (err, manuals) => {
       if (err) return console.error(err);
@@ -33,9 +35,11 @@ class DMCommandHandler {
     });
     return '';
   }
+
   validate() {
     return commandRegistry.gen[this.name];
   }
+
   run() {
     const commandToRun = this.validate();
     if (!commandToRun) return;
