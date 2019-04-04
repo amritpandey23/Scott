@@ -4,8 +4,11 @@ const fs = require('fs');
 const bot = require('./bot');
 const { Auth } = require('./modules');
 
+// check, create blank log files for logging
 const checkLogFiles = () => {
+  // three logs files
   const necessaryLogFiles = ['command-activity', 'event-activity', 'errors'];
+  // check if log files exist already
   fs.readdir('./logs', (err, files) => {
     if (err) {
       process.stdout.write(`no log directory exists\n`.red);
@@ -31,5 +34,4 @@ const checkLogFiles = () => {
 };
 
 checkLogFiles();
-
 bot.login(Auth.botToken);
