@@ -5,10 +5,6 @@ const path = require('path');
 class CommandHandler {
   constructor(client) {
     this.client = client;
-    this.name = '';
-    this.args = [];
-    this.author = {};
-    this.msg = {};
   }
 
   isEnabled() {
@@ -44,13 +40,19 @@ class CommandHandler {
   }
 
   validate() {
-    return commandRegistry.su[this.name] || commandRegistry.gen[this.name];
+    return this.channelType === 'dm'
+      ? commandRegistry.gen[this.name]
+      : commandRegistry.su[this.name] || commandRegistry.gen[this.name];
   }
 
   run() {
     const commandToRun = this.validate();
     if (!commandToRun) return;
-    if (!this.isAuthorSu() && commandList.su[this.name])
+    if (
+      this.channelType !== 'dm' &&
+      !this.isAuthorSu() &&
+      commandList.su[this.name]
+    )
       return this.msg.channel.send(
         "You are not authorized to run 'su' commands. To know more send `!help su`."
       );
@@ -73,7 +75,9 @@ class CommandHandler {
       ', '
     )}], BY: {${this.author.id}, ${this.author.username}}, GUILD: {${
       this.guild.id
-    }, ${this.guild.name}}, ON: ${new Date().toString()}\n`;
+    }, ${
+      this.guild === 'DM CHANNEL' ? this.guild : this.guild.name
+    }}, ON: ${new Date().toString()}\n`;
 
     fs.appendFile(
       path.join(__dirname, '../../logs/command-activity.txt'),
@@ -88,7 +92,6 @@ class CommandHandler {
     );
   }
   handle(message) {
-    if (message.channel.type === 'dm') return;
     this.msg = message;
     this.args = this.msg.content
       .slice(
@@ -98,7 +101,8 @@ class CommandHandler {
       .split(/ +/g);
     this.name = this.args.shift().toLowerCase();
     this.author = message.author;
-    this.guild = message.guild;
+    this.guild = message.guild || 'DM CHANNEL';
+    this.channelType = message.channel.type;
 
     this.run();
   }
