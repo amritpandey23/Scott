@@ -1,3 +1,5 @@
+require('colors');
+
 class Authenticator {
   constructor(config) {
     this.botToken = config.client.botToken;
@@ -18,22 +20,17 @@ class Authenticator {
   }
 
   findChannelByName(channelName, guild) {
-    if (config.guild.channels[channelName.toLowerCase()])
-      return guild.channels.find(
-        (ch) => ch.id === config.guild.channels[channelName]
-      );
-
     const chf = guild.channels.find(
       (ch) => ch.name === channelName.toLowerCase()
     );
 
     if (!chf) {
-      console.error(
-        `Error: No channel with the name ${channelName} was found in ${
+      const err = new Error(
+        `No channel with the name ${channelName} was found in ${
           guild.name
         } discord server.`
       );
-      return false;
+      return process.stdout.write(`${err}`.red);
     }
 
     return chf;
