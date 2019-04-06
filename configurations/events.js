@@ -1,6 +1,17 @@
 module.exports = {
-  message: ['Bot.Message', 'Bot.SharedCommandHandler'],
   disconnect: ['Bot.Disconnect'],
+  guildBandAdd: [],
+  guildBanRemove: [],
+  guildCreate: [],
+  guildDelete: [],
   guildMemberAdd: ['Bot.GuildMemberAdd'],
-  ready: ['Bot.Ready']
+  guildMemberRemove: [],
+  guildUnavailable: [],
+  guildUpdate: [],
+  message: ['Bot.Message', 'Bot.SharedCommandHandler'],
+  rateLimit: [],
+  ready: ['Bot.Ready'],
+  reconnecting: [],
+  resume: [],
+  userUpdate: []
 };
