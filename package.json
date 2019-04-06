@@ -9,6 +9,7 @@
     "deploy": "gcloud app deploy",
     "watch": "nodemon start.js"
   },
+  "repository": "gitlab:amritpandey/discord-bot",
   "keywords": [
     "discord",
     "bot"
