@@ -1,8 +1,33 @@
-# Getting Started
+# Mr. Scott
+
+![mr scott logo](https://i.imgur.com/XfNjSIX.png)
+
+A chatbot for [Discord](https://discordapp.com) servers. This project is under development, however an `mvp` version of the bot is finished, if you wish to add and configure this bot to your server, download [Mr. Scott v1.0-mvp](https://github.com/ap4gh/mr_scott/releases/tag/v1.0-mvp).
+
+## Commands
+
+```
+SR. NAME USAGE                    EXAMPLE
+
+1.  !announce [type] [message]    !anounce success hello
+2.  !bot [type]                   !bot list-commands
+3.  !define ?wiki [term]          !define wiki coffee
+4.  !gupt [id] [message]          !gupt 4324334324324332 i lv u
+5.  !help [command name]          !help gupt
+6.  !reload [command name?s]      !reload help announce
+```
+
+**NOTE**: Bot prefix `!` can be different. To read any command manual run `!help [command name]`. Some commands are server specific and cannot run via DMs, also admin commands are only executed in servers.
+
+## Support Server
+
+Mr. Scott is developed by [Spanit Labs](https://discord.gg/XnjpKkM). Join our server to discuss development, submit bugs and suggestions.
+
+## Contributing
 
 This pages have information on setting up and running bot locally on your system. To run bot you will need a bot token. Check the procedure to get token and adding bot to a server [here](https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/).
 
-## Installing
+### Installing
 
 1. Clone the repo `git clone https://gitlab.com/amritpandey/discord-bot.git`
 2. Move into the directory `cd discord-bot`
@@ -11,18 +36,18 @@ This pages have information on setting up and running bot locally on your system
 5. Fill the `botToken` field in `/configuration/config.json` with your own token.
 6. Optional. Change `botPrefix` to a desirable symbol like `%` or `^`.
 
-## Running
+### Running
 
 1. If you are developing, you should run `npm run watch`. This will watch for changes and restart the bot.
 2. Or. Run the bot with `npm start`
 
-## Developing
+### Developing
 
 - [Core Development](https://gitlab.com/amritpandey/discord-bot/wikis/Core-Development)
 - [Create a new command](https://gitlab.com/amritpandey/discord-bot/wikis/Create-new-Commands)
 - [Add a new event](https://gitlab.com/amritpandey/discord-bot/wikis/Add-new-Events)
 
-## Hosting
+### Hosting
 
 You can host this bot on any provider of your choice. Here is a short tutorial on how to host on google's [Compute Engine](https://cloud.google.com/compute/).
 
@@ -38,3 +63,7 @@ NOTE: Google's App engine is much better than CE for managing the bot but AE oft
   7. Deploy the bot with pm2 `pm2 start start.js`
 
 Your bot is now online and now can be invited via 0Auth to any number of servers. Read the entire procedure to deploy an app on GCP Compute Engine [here](https://medium.com/google-cloud/deploying-a-node-js-app-on-google-cloud-8419de45e5dc)
+
+## Licensing
+
+Source code this chatbot is release under MIT. You are not allowed to use the name `Mr. Scott`.
