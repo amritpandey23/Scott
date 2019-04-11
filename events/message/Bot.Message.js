@@ -4,7 +4,7 @@ class Message {
   }
 
   handle(message) {
-    const { Auth, CommandHandler, DMCommandHandler } = require('../../modules');
+    const { Auth } = require('../../modules');
     if (!message.content.startsWith(Auth.botPrefix) || message.author.bot)
       return;
   }
