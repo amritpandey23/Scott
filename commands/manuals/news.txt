@@ -1,0 +1,17 @@
+```
+NAME
+    news -- get latest new headlines
+
+SYNOPSIS
+    !news [topic | term | place ...]
+
+EXAMPLE
+    !news iPhone X
+
+DESCRIPTION
+    news is a command that fetches latest news headlines
+    on any given topic, term, place etc. The headlines
+    are linked to the source so you can follow and read
+    in your web browser. Total number of headlines are
+    limited to 10.
+```
