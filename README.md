@@ -4,7 +4,7 @@
 
 A chatbot for [Discord](https://discordapp.com) servers. This project is under development, however an `mvp` version of the bot is finished, if you wish to add and configure this bot to your server, download [Mr. Scott v1.0-mvp](https://github.com/ap4gh/mr_scott/releases/tag/v1.0-mvp).
 
-# Getting Started
+## Getting Started
 
 [Invite](https://ap4gh.github.io/mr_scott/) Mr. Scott to your server. Run `$bot list-commands` on `#general` chit chat channel to fetch list of available commands. Enjoy. You can also try out Mr. Scott on our [support server](https://discord.gg/XnjpKkM).
 
