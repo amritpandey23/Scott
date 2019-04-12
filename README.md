@@ -4,6 +4,10 @@
 
 A chatbot for [Discord](https://discordapp.com) servers. This project is under development, however an `mvp` version of the bot is finished, if you wish to add and configure this bot to your server, download [Mr. Scott v1.0-mvp](https://github.com/ap4gh/mr_scott/releases/tag/v1.0-mvp).
 
+# Getting Started
+
+[Invite](https://ap4gh.github.io/mr_scott/) Mr. Scott to your server. Run `$bot list-commands` on `#general` chit chat channel to fetch list of available commands. Enjoy. You can also try out Mr. Scott on our [support server](https://discord.gg/XnjpKkM).
+
 ## Commands
 
 ```
@@ -30,4 +34,4 @@ Read [wiki](https://github.com/ap4gh/mr_scott/wiki) for info on how to start dev
 
 ## License
 
-Source code this chatbot is release under MIT. You are not allowed to use the name `Mr. Scott`.
+Source code of this project is release under MIT license. You are not allowed to use the brand name `Mr. Scott` for any other associated/similar projects.
