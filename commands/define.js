@@ -1,3 +1,6 @@
+// run function for !define command:
+exports.run = (client, message, args) => runUserCommand(message, args, args[0]);
+
 /**
  * author: ap4gh(Github), debjay(on CodeCareer Discord Server)
  * license: MIT https://opensource.org/licenses/MIT
@@ -165,6 +168,3 @@ const wikipediaOpenSearch = async (message, args) => {
   }
   return sendMessage(message, result);
 };
-
-// run function for !define command:
-exports.run = (client, message, args) => runUserCommand(message, args, args[0]);
