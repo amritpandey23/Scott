@@ -26,6 +26,12 @@ module.exports = {
       usage: '?wiki <search string>',
       isEnabled: true
     },
+    news: {
+      category: '🌐 web',
+      description: 'latest headings from google news',
+      usage: '<topic | term | category>',
+      isEnabled: true
+    },
     bot: {
       category: '🛠 utility',
       description: 'gets information about bot',
