@@ -15,7 +15,17 @@ body {
 
 a {
   text-decoration: none;
-  color: #f0db89;
+  color: #f5e298;
+}
+
+a.special-link {
+  color: #122f47;
+  box-shadow: inset 0 -2px 0 0 #f5e298;
+  border-bottom: 1px solid #f5e298;
+}
+
+a.special-link:hover {
+  background: #f5e298;
 }
 
 .wrapper {
@@ -67,6 +77,7 @@ a {
   background: #eee;
   border: 1px solid #e6e6e6;
   font-weight: 600;
+  font-size: 0.9rem;
   color: #161616;
 }
 
@@ -103,13 +114,16 @@ a {
 }
 
 .proj-image {
-  width: 180px;
+  width: 150px;
   border-radius: 50%;
-  margin: -2rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
+  -webkit-box-shadow: 0px 0px 68px -27px rgba(18, 47, 71, 1);
+  -moz-box-shadow: 0px 0px 68px -27px rgba(18, 47, 71, 1);
+  box-shadow: 0px 0px 68px -27px rgba(18, 47, 71, 1);
 }
 
 .proj-name {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 700;
   color: var(--secondary-color);
 }
@@ -120,10 +134,10 @@ a {
 }
 
 .intro-text {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.65;
-  max-width: 540px;
+  line-height: 1.75;
+  max-width: 440px;
   text-align: center;
   margin: 2rem 0;
   padding: 0 1rem;
@@ -137,11 +151,11 @@ a {
 }
 
 .btn {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   padding: 1.5rem 0;
-  width: 250px;
+  width: 210px;
   background: #f9f9f9;
   margin-bottom: 1.5rem;
   color: #122f47;
@@ -199,14 +213,18 @@ a {
   }
 }
 
-@media only screen and (min-width: 820px) {
+@media only screen and (min-width: 750px) {
+  .proj-image {
+    width: 240px;
+    margin-top: -2rem;
+  }
   .proj-name {
     margin-top: 2rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   .intro-text {
-    max-width: 640px;
-    font-size: 1.35rem;
+    max-width: 440px;
+    font-size: 1.25rem;
     margin: 3rem 0;
   }
 }
