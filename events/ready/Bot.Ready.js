@@ -1,9 +1,7 @@
-require('colors');
+const BaseEvent = require('../BaseEvent');
 
-class Ready {
-  constructor(client) {
-    this.client = client;
-  }
+class Ready extends BaseEvent {
+  // handler for event
   async handle() {
     process.stdout.write(
       `Logged in as ${this.client.user.tag.black.bgYellow}\n`.blue

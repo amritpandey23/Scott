@@ -1,12 +1,9 @@
-const commandRegistry = require('../../configurations/commands');
 const fs = require('fs');
 const path = require('path');
+const BaseEvent = require('../BaseEvent');
+const commandRegistry = require('../../configurations/commands');
 
-class CommandHandler {
-  constructor(client) {
-    this.client = client;
-  }
-
+class SharedCommandHandler extends BaseEvent {
   isEnabled() {
     const command = this.validate();
     return command && command.isEnabled;
@@ -91,7 +88,7 @@ class CommandHandler {
       }
     );
   }
-  handle(message) {
+  async handle(message) {
     this.msg = message;
     this.args = this.msg.content
       .slice(
@@ -108,4 +105,4 @@ class CommandHandler {
   }
 }
 
-module.exports = CommandHandler;
+module.exports = SharedCommandHandler;

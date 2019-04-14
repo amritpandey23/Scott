@@ -1,10 +1,9 @@
-class Message {
-  constructor(client) {
-    this.client = client;
-  }
+const BaseEvent = require('../BaseEvent');
+const { Auth } = require('../../modules');
 
-  handle(message) {
-    const { Auth } = require('../../modules');
+class Message extends BaseEvent {
+  // handler for message event
+  async handle(message) {
     if (!message.content.startsWith(Auth.botPrefix) || message.author.bot)
       return;
   }

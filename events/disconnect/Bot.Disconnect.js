@@ -1,10 +1,11 @@
-class Disconnect {
-  constructor(client) {
-    this.client = client;
-  }
+const BaseEvent = require('../BaseEvent');
+
+class Disconnect extends BaseEvent {
+  // hander for event
   async handle() {
-    process.stdout.write(
+    return process.stdout.write(
       `Client is disconnected and is no longer trying to reconnect. Must be some network problem. \n`
+        .red
     );
   }
 }
