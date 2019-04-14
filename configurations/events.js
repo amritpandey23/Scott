@@ -8,7 +8,7 @@ module.exports = {
   guildMemberRemove: [],
   guildUnavailable: [],
   guildUpdate: [],
-  message: ['Bot.Message', 'Bot.SharedCommandHandler'],
+  message: ['Bot.SharedCommandHandler'],
   rateLimit: [],
   ready: ['Bot.Ready'],
   reconnecting: [],
