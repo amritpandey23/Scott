@@ -1,5 +1,6 @@
-const Authenticator = require('./Authenticator');
+const config = require('../configurations');
 
 module.exports = {
-  Auth: new Authenticator(require('../configurations/config.json'))
+  Auth: new (require('./Authenticator'))(config.config),
+  Utils: require('./utils')
 };
