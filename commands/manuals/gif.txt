@@ -1,0 +1,17 @@
+```
+NAME
+    gif -- send gif in the channel
+
+SYNOPSIS
+    !gif [name | topic | place ... ]
+
+EXAMPLE
+    !gif yo mama
+
+DESCRIPTION
+    gif is a command that sends gif images in the
+    channel. It search for 8 unique gifs and randomly
+    selects any one to send on the channel. On any
+    given day you will not be able to send more than 8
+    unique gif images for a topic.
+```
