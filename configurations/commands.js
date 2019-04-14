@@ -39,13 +39,13 @@ module.exports = {
       isEnabled: true
     },
     gupt: {
-      category: '👻 fun',
+      category: '🎮 fun',
       description: 'send anonymous message to anyone',
       usage: '<user id> <message>',
       isEnabled: true
     },
     gif: {
-      category: '👻 fun',
+      category: '🎮 fun',
       description: 'send a custom gif to the channel',
       usage: '<gif name>',
       isEnabled: true
