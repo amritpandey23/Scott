@@ -1,5 +1,3 @@
-require('colors');
-
 class Authenticator {
   constructor(config) {
     this.botToken = config.client.botToken;
@@ -30,7 +28,7 @@ class Authenticator {
           guild.name
         } discord server.`
       );
-      return process.stdout.write(`${err}`.red);
+      return ErrorHandler(err);
     }
 
     return chf;
