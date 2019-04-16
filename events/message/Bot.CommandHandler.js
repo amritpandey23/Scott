@@ -19,7 +19,7 @@ const { commands, config } = require('../../configurations');
  * the validation methods are applied on the
  * command before executing it.
  */
-class SharedCommandHandler extends BaseEvent {
+class CommandHandler extends BaseEvent {
   /**
    * handler for command event.
    */
@@ -120,4 +120,4 @@ class SharedCommandHandler extends BaseEvent {
   }
 }
 
-module.exports = SharedCommandHandler;
+module.exports = CommandHandler;
