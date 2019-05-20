@@ -1,4 +1,5 @@
 const BaseEvent = require('../BaseEvent');
+const config = require('../../configurations/config.json');
 
 class Ready extends BaseEvent {
   // handler for event
@@ -8,7 +9,7 @@ class Ready extends BaseEvent {
     );
 
     this.client.user
-      .setActivity('!bot list-commands')
+      .setActivity(`${config.client['botPrefix']}bot commands`)
       .then((presence) => {
         process.stdout.write(
           `Activity set to ${

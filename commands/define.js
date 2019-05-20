@@ -88,7 +88,7 @@ const ddgInstantAnswer = async (message, args) => {
   const abstractURL = data['AbstractURL'];
   // if no data is provided:
   if (relatedTopics.length === 0) {
-    result += `Cannot find information on *${searchPhrase}* :no_good: Read the command guide with \`!define --help\` to get accurate results.`;
+    result += `No definition related to **${searchPhrase}** :no_good: Read \`define\` command manual for tips on how to get accurate results.`;
   } // if abstract data is missing:
   else if (!abstractText || !abstractURL) {
     result += `*"${searchPhrase}" may refer to following things*  :point_down:\n\n`;
@@ -140,7 +140,7 @@ const wikipediaOpenSearch = async (message, args) => {
   let result = definitions[0];
   // no information is received from wikipedia:
   if (!result) {
-    result = `No information provided for *${searchPhrase}* :no_good: `;
+    result = `No definition was found for the term **${searchPhrase}** :no_good: `;
   } // a word have more than one meaning:
   else if (result.match(/may refer to/g)) {
     result =

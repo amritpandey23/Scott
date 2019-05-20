@@ -2,13 +2,17 @@
 NAME
     bot -- general and commands information.
 
-USAGE
-    to get information on the bot such as uptime, tag,
-    ID etc. run:
-    >>> <prefix>bot info
+SYNOPSIS
+    <prefix>bot about
+    <prefix>bot commands
+    <prefix>bot admin-commands
 
-    to get list of available commands, run:
-    >>> <prefix>bot list-commands
-        OR
-    >>> <prefix>bot admin-commands
+EXAMPLE
+    $bot commands
+
+DESCRIPTION
+    bot is a command that display information related
+    to chatbot. It includes information like overview,
+    command list, stats etc. All the available info
+    types are listed above in SYNOPSIS.
 ```

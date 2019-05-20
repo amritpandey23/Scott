@@ -29,7 +29,7 @@ a.special-link:hover {
 }
 
 .wrapper {
-  min-height: calc(100vh - 48.5px);
+  min-height: calc(100vh - 56.5px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -107,6 +107,20 @@ a.special-link:hover {
   flex: 1;
 }
 
+.typewriter {
+  color: var(--secondary-color);
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 1rem 0 0 0;
+  max-width: 350px;
+  padding: 0.7rem 0.6rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+}
+
 .proj-image-name {
   display: flex;
   flex-direction: column;
@@ -139,7 +153,6 @@ a.special-link:hover {
   line-height: 1.75;
   max-width: 440px;
   text-align: center;
-  margin: 2rem 0;
   padding: 0 1rem;
   color: var(--secondary-color);
 }
@@ -225,6 +238,6 @@ a.special-link:hover {
   .intro-text {
     max-width: 440px;
     font-size: 1.25rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
   }
 }
