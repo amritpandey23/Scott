@@ -25,7 +25,7 @@ const runUserCommand = (message, args, commandName = '', client) => {
 const commandListEmbed = () => {
   const embed = new RichEmbed();
   embed
-    .setTitle('Mr. Scott | Commands')
+    .setTitle('Mr. Scott(Beta) | Commands')
     .setDescription(
       '*Find all the commands grouped by category below. Commands are followed by valid arguments \
     enclosed between `<` and `>`, arguments prefixed with `?` are optional.*'
@@ -51,10 +51,10 @@ const botInfo = (message, args, client) => {
   embed
     .setColor(0xdfb91f)
     .setDescription(
-    `A friendly chatbot for Discord. ` + 
+    `A friendly chatbot assistant for Discord. ` + 
     `[Free and Open Source](https://github.com/ap4gh/mr_scott/blob/master/LICENSE) for everyone. ` +
-    `[Invite](https://ap4gh.github.io/mr_scott) Mr. Scott to your server. ` + 
-    `If you have any suggestion, bug or request, discuss it in our [support group](https://discord.gg/XnjpKkM).`
+    `[Invite](https://ap4gh.github.io/mr_scott) Mr. Scott to your server today. ` + 
+    `If you have any suggestion, bug or request, discuss it in our [support server](https://discord.gg/XnjpKkM).`
     )
     .setAuthor(client.user.username)
     .setThumbnail(client.user.avatarURL)
@@ -62,10 +62,10 @@ const botInfo = (message, args, client) => {
     .addField('Uptime', Utils.timeConversion(client.uptime), true)
     .addField('Bot Prefix', `\`${Auth.botPrefix}\``, true)
     .addField('Guilds', client.guilds.size, true)
-    .addField('Written in', 'JavaScript/NodeJS', true)
+    .addField('Build with', 'JavaScript/NodeJS', true)
     .addField('Homepage', '[https://ap4gh.github.io/mr_scott](https://ap4gh.github.io/mr_scott)')
     .addBlankField()
-    .setFooter(`Run \`${Auth.botPrefix}bot commands\` to see available commands.`);
+    .setFooter(`Run \`${Auth.botPrefix}bot commands\` to see list of available commands.`);
 
   message.channel.send({ embed });
 };
