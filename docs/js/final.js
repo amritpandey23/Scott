@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("var TxtType = function TxtType(el, toRotate, period) {\n  this.toRotate = toRotate;\n  this.el = el;\n  this.loopNum = 0;\n  this.period = parseInt(period, 10) || 2000;\n  this.txt = '';\n  this.tick();\n  this.isDeleting = false;\n};\n\nTxtType.prototype.tick = function () {\n  var i = this.loopNum % this.toRotate.length;\n  var fullTxt = this.toRotate[i];\n\n  if (this.isDeleting) {\n    this.txt = fullTxt.substring(0, this.txt.length - 1);\n  } else {\n    this.txt = fullTxt.substring(0, this.txt.length + 1);\n  }\n\n  this.el.innerHTML = '<span class=\"wrap\">' + this.txt + '</span>';\n  var that = this;\n  var delta = 200 - Math.random() * 100;\n\n  if (this.isDeleting) {\n    delta /= 2;\n  }\n\n  if (!this.isDeleting && this.txt === fullTxt) {\n    delta = this.period;\n    this.isDeleting = true;\n  } else if (this.isDeleting && this.txt === '') {\n    this.isDeleting = false;\n    this.loopNum++;\n    delta = 500;\n  }\n\n  setTimeout(function () {\n    that.tick();\n  }, delta);\n};\n\nwindow.onload = function () {\n  var elements = document.getElementsByClassName('typewrite');\n\n  for (var i = 0; i < elements.length; i++) {\n    var toRotate = elements[i].getAttribute('data-type');\n    var period = elements[i].getAttribute('data-period');\n\n    if (toRotate) {\n      new TxtType(elements[i], JSON.parse(toRotate), period);\n    }\n  } // INJECT CSS\n\n\n  var css = document.createElement(\"style\");\n  css.type = \"text/css\";\n  css.innerHTML = \".typewrite > .wrap { border-right: 0.08em solid #fff}\";\n  document.body.appendChild(css);\n};\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ })
 
