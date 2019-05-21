@@ -9,7 +9,7 @@ class Ready extends BaseEvent {
     );
 
     this.client.user
-      .setActivity(`${config.client['botPrefix']}bot commands`)
+      .setActivity(`use ${config.client['botPrefix']}help me`)
       .then((presence) => {
         process.stdout.write(
           `Activity set to ${
