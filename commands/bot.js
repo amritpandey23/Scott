@@ -82,9 +82,11 @@ const listAdminCommands = (message, args, client) => {
     const embed = commandListEmbed();
     let commandCollect = '';
     Object.keys(commands.su).forEach((cmd) => {
-      commandCollect += `\`${Auth.botPrefix}${cmd} ${commands.su[cmd]['usage']}\` ${
-        commands.su[cmd]['description']
-      }\n`;
+      if(commands.su[cmd]['permitLevel'] !== 2) {
+        commandCollect += `\`${Auth.botPrefix}${cmd} ${commands.su[cmd]['usage']}\` ${
+          commands.su[cmd]['description']
+        }\n`;
+      }
     });
     embed.addField('🛡 ADMIN', commandCollect);
     return member.send({ embed });
