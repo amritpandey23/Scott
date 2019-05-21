@@ -99,11 +99,18 @@ class CommandHandler extends BaseEvent {
     const commandToRun = this.validate();
     if (!commandToRun) return;
 
+    // stop users from using owner level
+    // commands.
+    if (commands.su[this.name]) {
+      if(commands.su[this.name]['permitLevel'] === 2 && this.author.id !== Auth.maintainerId)
+        return;
+    }
+
     // if channel type is 'dm' AND
     // author is not an admin AND
     // the command is an admin command
     // -- end
-    if (this.channelType !== 'dm' && !this.isAuthorSu() && commandList.su[this.name])
+    if (this.channelType !== 'dm' && !this.isAuthorSu() && commands.su[this.name])
       return this.msg.channel.send(`You are not authorized to run 'su' commands. ` +
         `To know more send \`${Auth.botPrefix}help su\`.`);
 
