@@ -125,7 +125,10 @@ const listAvailableCommands = (message, args, client) => {
     .addBlankField()
     .addField(
       '🔎 OTHER',
-      `To see admin commands, run \`${Auth.botPrefix}bot admin-commands\`.`
+      `To know basic usage of the bot run \`${Auth.botPrefix}help me\`. ` +
+      `To see admin commands, run \`${Auth.botPrefix}bot admin-commands\`. ` + 
+      `Any immediate change to the bot will be visible on bot's gaming status. ` + 
+      `More info on the bot is available via \`${Auth.botPrefix}bot about\``
     );
 
   message.channel.send({ embed });
