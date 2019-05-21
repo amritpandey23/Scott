@@ -3,6 +3,7 @@ class Authenticator {
     this.botToken = config.client.botToken;
     this.botPrefix = config.client.botPrefix;
     this.clientId = config.client.clientId;
+    this.maintainerId = config.maintainerId; 
   }
 
   isAdmin(member) {
