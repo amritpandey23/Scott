@@ -3,9 +3,9 @@
     "botToken": "",
     "secret": "",
     "clientId": "",
-    "botPrefix": "$",
-    "maintainerID": ""
+    "botPrefix": "$"
   },
+  "maintainerId": "",
   "database": {
     "host": "localhost",
     "dbname": "",
