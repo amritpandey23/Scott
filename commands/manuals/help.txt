@@ -1,5 +1,5 @@
 ```
-                   DISCORD BOT v1.0
+                   Mr. Scott
 
 List of available commands
     1. announce         send an annoucement to the channel

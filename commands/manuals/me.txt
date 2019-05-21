@@ -1,0 +1,19 @@
+```
+Mr. Scott | BASIC USAGE GUIDE
+
+Hi there! My name is Scott, I am a friendly chatbot assistant
+for discord servers. 
+
+To use any command, just run it with a prefix like this:
+    >>> <prefix>define wiki game of thrones
+
+Each command has a prefix like \, $, %, ^ etc. followed by
+command arguments. To read how to use a specific command 
+take the help from 'help' command.
+    >>> <prefix>help define
+
+To list all the available commands, just run
+    >>> <prefix>bot commands
+
+Thats it! Thanks for reading. Bye 👋
+```
