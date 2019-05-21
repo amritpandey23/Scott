@@ -7,9 +7,9 @@ for discord servers.
 To use any command, just run it with a prefix like this:
     >>> <prefix>define wiki game of thrones
 
-Each command has a prefix like \, $, %, ^ etc. followed by
-command arguments. To read how to use a specific command 
-take the help from 'help' command.
+Every command has the same prefix like \, $, %, ^ etc. 
+followed by command arguments. To know how to use a specific  
+command read the manual from 'help' command.
     >>> <prefix>help define
 
 To list all the available commands, just run
