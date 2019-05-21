@@ -4,7 +4,15 @@ module.exports = {
       category: '🛠 utility',
       description: 'makes an announcement on the channel',
       usage: '<message>',
-      isEnabled: true
+      isEnabled: true,
+      permitLevel: 0
+    },
+    broadcast: {
+      category: '🛠 utility',
+      description: 'broadcast a message on every guild',
+      usage: '<message>',
+      isEnabled: true,
+      permitLevel: 2
     }
   },
   gen: {
@@ -40,7 +48,7 @@ module.exports = {
     },
     gupt: {
       category: '🎮 fun',
-      description: 'send anonymous message to anyone',
+      description: 'send anonymous message to anyone(broken)',
       usage: '<user id> <message>',
       isEnabled: true
     },
