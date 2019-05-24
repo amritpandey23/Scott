@@ -14,7 +14,7 @@ A friendly chatbot assistant for [Discord](https://discordapp.com) servers. This
 SR. NAME USAGE                    EXAMPLE
 
 1.  \announce [type] [message]    \anounce success hello
-2.  \bot [type]                   \bot list-commands
+2.  \bot [type]                   \bot commands
 3.  \define ?wiki [term]          \define wiki coffee
 4.  \gupt [id] [message]          \gupt 4324334324324332 i lv u
 5.  \help [command name]          \help gupt
