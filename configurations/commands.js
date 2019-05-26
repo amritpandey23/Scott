@@ -57,6 +57,12 @@ module.exports = {
       description: 'send a custom gif to the channel',
       usage: '<gif name>',
       isEnabled: true
+    },
+    guild: {
+      category: '🛠 utility',
+      description: 'information about the current guild',
+      usage: 'info | stats',
+      isEnabled: true
     }
   }
 };
