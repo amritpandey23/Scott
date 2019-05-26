@@ -95,7 +95,7 @@ const getGuildInfo = (message, args) => {
 
 }
 
-const getGuildStats = async (message, args) => {
+const getGuildStats = (message, args) => {
 
     const {
         id,
@@ -110,64 +110,67 @@ const getGuildStats = async (message, args) => {
     const lastMonth = today.getMonth() - 1
     const currYear = today.getFullYear()
 
-    let membersLastWeek = 0;
-    let membersThisWeek = 0;
-    let membersLastMonth = 0;
-
     let loadingEmbed = {
         "footer": {
             "text": `preparing data...`
         }
     }
 
-    const msg = await message.channel.send({embed: loadingEmbed});
-    members.array().forEach(member => {
-        const joinDate = new Date(member['joinedTimestamp'])
-        if (joinDate.getTime() >= lastMon.getTime() && joinDate.getTime() <= lastSun.getTime())
-            membersLastWeek++;
-        if (joinDate.getTime() >= lastSun.getTime())
-            membersThisWeek++;
-        if (joinDate.getMonth() === lastMonth && joinDate.getFullYear() === currYear)
-            membersLastMonth++;
-    });
-    const embed = {
-        "author": {
-            "name": `${name}`,
-            "icon_url": iconURL
-        },
-        "color": 0xdfb91f,
-        "fields": [
-            {
-                "name": "\u200b",
-                "value": "Member joined"
-            },
-            {
-                "name": `This Week`,
-                "value": membersThisWeek,
-                "inline": true
-            },
-            {
-                "name": `Previous Week`,
-                "value": membersLastWeek,
-                "inline": true
-            },
-            {
-                "name": `Previous Month`,
-                "value": membersLastMonth,
-                "inline": true
-            },
-            {
-                "name": "\u200b",
-                "value": `Generated on ${(new Date()).toDateString()}`
-            }
-        ]
-    }
-    await msg.edit({embed})
+    message.channel.send({embed: loadingEmbed}).then(async msg => {
 
-    guildStats.add(id, {
-        "joined_last_week": membersLastWeek,
-        "joined_this_week": membersThisWeek,
-        "joined_last_month": membersLastMonth
+        let membersLastWeek = 0;
+        let membersThisWeek = 0;
+        let membersLastMonth = 0;
+
+        await members.array().forEach(member => {
+            const joinDate = new Date(member['joinedTimestamp'])
+            if (joinDate.getTime() >= lastMon.getTime() && joinDate.getTime() <= lastSun.getTime())
+                membersLastWeek++;
+            if (joinDate.getTime() >= lastSun.getTime())
+                membersThisWeek++;
+            if (joinDate.getMonth() === lastMonth && joinDate.getFullYear() === currYear)
+                membersLastMonth++;
+        });
+
+        const embed = {
+            "author": {
+                "name": `${name}`,
+                "icon_url": iconURL
+            },
+            "color": 0xdfb91f,
+            "fields": [
+                {
+                    "name": "\u200b",
+                    "value": "Member joined"
+                },
+                {
+                    "name": `This Week`,
+                    "value": membersThisWeek,
+                    "inline": true
+                },
+                {
+                    "name": `Previous Week`,
+                    "value": membersLastWeek,
+                    "inline": true
+                },
+                {
+                    "name": `Previous Month`,
+                    "value": membersLastMonth,
+                    "inline": true
+                },
+                {
+                    "name": "\u200b",
+                    "value": `Generated on ${(new Date()).toDateString()}`
+                }
+            ]
+        }
+        msg.edit({embed})
+
+        guildStats.add(id, {
+            "joined_last_week": membersLastWeek,
+            "joined_this_week": membersThisWeek,
+            "joined_last_month": membersLastMonth
+        })
     })
 
 }
