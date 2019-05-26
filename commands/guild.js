@@ -105,9 +105,8 @@ const getGuildStats = async (message, args) => {
 
     // console.log(guildMembers[2]['joinedTimestamp'])
     const today = new Date()
-    const daysToSub = today.getDay() === 0 ? 7 : today.getDay()
-    const lastSun = new Date(today.getTime() - (daysToSub * 24 * 60 * 60 * 1000))
-    const lastMon = new Date(lastSun.getTime() - (6 * 24 * 60 * 60 * 1000))
+    const lastSun = new Date(today.getTime() - (today.getDay() * 24 * 60 * 60 * 1000))
+    const lastMon = new Date(lastSun - (6 * 24 * 60 * 60 * 1000))
     const lastMonth = today.getMonth() - 1
     const currYear = today.getFullYear()
 
@@ -122,7 +121,7 @@ const getGuildStats = async (message, args) => {
     }
 
     const msg = await message.channel.send({embed: loadingEmbed});
-    members.array().forEach(member => {
+    await members.array().forEach(member => {
         const joinDate = new Date(member['joinedTimestamp'])
         if (joinDate.getTime() >= lastMon.getTime() && joinDate.getTime() <= lastSun.getTime())
             membersLastWeek++;
@@ -164,7 +163,7 @@ const getGuildStats = async (message, args) => {
         ]
     }
     
-    setTimeout(function(){ msg.edit({ embed }); }, 3500);
+    setTimeout(function(){ msg.edit({ embed }); }, 5000);
 
     guildStats.add(id, {
         "joined_last_week": membersLastWeek,
