@@ -121,7 +121,7 @@ const getGuildStats = async (message, args) => {
     }
 
     const msg = await message.channel.send({embed: loadingEmbed});
-    await members.array().forEach(member => {
+    members.array().forEach(member => {
         const joinDate = new Date(member['joinedTimestamp'])
         if (joinDate.getTime() >= lastMon.getTime() && joinDate.getTime() <= lastSun.getTime())
             membersLastWeek++;
