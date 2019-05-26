@@ -1,0 +1,16 @@
+```
+NAME
+    guild -- information and stats about current server.
+
+SYNOPSIS
+    <prefix>guild info
+    <prefix>guild stats
+
+EXAMPLE
+    $guild info
+
+DESCRIPTION
+    guild is a command that displays information and
+    user join statistics of the guild(server) that
+    user is a part of.
+```

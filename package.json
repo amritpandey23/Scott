@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node start.js",
     "deploy": "gcloud app deploy",
-    "watch": "nodemon start.js"
+    "watch": "nodemon start.js --ignore 'data/*.json'"
   },
   "repository": "gitlab:amritpandey/discord-bot",
   "keywords": [

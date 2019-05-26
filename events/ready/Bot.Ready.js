@@ -1,5 +1,8 @@
 const BaseEvent = require('../BaseEvent');
-const config = require('../../configurations/config.json');
+const { config } = require('../../configurations');
+const { JSONCollection } = require('../../modules');
+
+const guildInfo = new JSONCollection('guildInfo');
 
 class Ready extends BaseEvent {
   // handler for event
@@ -20,6 +23,31 @@ class Ready extends BaseEvent {
       .catch((error) => {
         process.stdout.write(error.red);
       });
+
+      this.client.guilds.array().forEach(guild => {
+        const {
+            id,
+            name, 
+            createdTimestamp, 
+            iconURL, 
+            large,
+            memberCount,
+            ownerID,
+            region,
+            verified
+        } = guild;
+    
+        guildInfo.add(id, {
+            name, 
+            createdTimestamp, 
+            iconURL, 
+            large,
+            memberCount,
+            ownerID,
+            region,
+            verified
+        })
+    })
   }
 }
 
