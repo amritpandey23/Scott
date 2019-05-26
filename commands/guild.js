@@ -162,7 +162,8 @@ const getGuildStats = async (message, args) => {
             }
         ]
     }
-    await msg.edit({embed})
+    
+    setTimeout(function(){ msg.edit({ embed }); }, 5000);
 
     guildStats.add(id, {
         "joined_last_week": membersLastWeek,
