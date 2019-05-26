@@ -20,4 +20,4 @@ package-lock.json
 
 # static
 logs/
-data/*.json
+data/**/*.json
