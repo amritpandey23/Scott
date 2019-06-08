@@ -44,6 +44,14 @@ class JSONCollection {
         const data = this.fetch()
         return data[key]
     }
+
+    save(data) {
+        console.log(data);
+        fs.writeFileSync(this.storagePath, JSON.stringify(data), (err) => {
+            if (err) throw err;
+            console.log('ok');
+        })
+    }
 }
 
 module.exports = JSONCollection
