@@ -5,7 +5,7 @@ module.exports = {
   guildCreate: [],
   guildDelete: [],
   guildMemberAdd: ['Bot.GuildMemberAdd'],
-  guildMemberRemove: ['Bot.GuildMemberRemove'],
+  guildMemberRemove: [],
   guildUnavailable: [],
   guildUpdate: [],
   message: ['Bot.CommandHandler'],
