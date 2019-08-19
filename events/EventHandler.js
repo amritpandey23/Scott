@@ -1,4 +1,4 @@
-const events = require('../configurations/events');
+const events = require("./events.registry");
 const fs = require('fs');
 
 class EventHandler {

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const checkLogFiles = () => {
+const createLogFiles = () => {
   // check, create blank log files for logging
   const necessaryLogFiles = ['command-activity', 'event-activity', 'errors'];
   // check if log files exist already
@@ -13,7 +13,7 @@ const checkLogFiles = () => {
       process.stdout.write(
         `log directory created at `.gray + `./logs`.bgYellow.black + `\n`
       );
-      return checkLogFiles();
+      return createLogFiles();
     }
     necessaryLogFiles.forEach((fileName) => {
       if (!files.includes(`${fileName}.txt`)) {
@@ -28,4 +28,4 @@ const checkLogFiles = () => {
   });
 };
 
-module.exports = checkLogFiles;
+module.exports = createLogFiles;
