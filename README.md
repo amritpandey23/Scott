@@ -34,4 +34,4 @@ Read [wiki](https://github.com/ap4gh/mr_scott/wiki) for info on how to start dev
 
 ## License
 
-Source code of this project is released under MIT license. You are not allowed to use the brand name `Mr. Scott` for any associated/similar projects without prior permission from ap4gh.
+Source code of this project is released under MIT license. 
