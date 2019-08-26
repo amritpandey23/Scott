@@ -7,9 +7,8 @@ const
 let colorScheme = settings.LOG_COLOR_SCHEME;
 colors.setTheme(colorScheme);
 
-function write(type, ...args) {
+function write(...args) {
   let line = `[${(new Date()).toISOString()}] `;      // time 
-  line += `${type}: `;                                // type
   line += args.join(' ');                             // message
   line += '\n';
 
@@ -18,9 +17,17 @@ function write(type, ...args) {
   });
 }
 
-function log(type, ...args) {
-  write(type, ...args);
+function print(type, ...args) {
+  write(type.toUpperCase(), args.join(' '));
   return console.log(colors[colorScheme[type] ? type : "white"](args.join(' ')));
 }
 
-module.exports = { log, write }
+module.exports = { 
+  write,
+  success: function(...args) { print("success", ...args) },
+  info: function(...args) { print("info", ...args) },
+  log: function(...args) { print("log", ...args) },
+  warn: function(...args) { print("warn", ...args) },
+  error: function(...args) { print("error", ...args) },
+  hl: function(...args) { print("highlight", ...args) }
+}
