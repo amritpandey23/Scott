@@ -8,7 +8,7 @@ module.exports = {
         error: ["red", "bold"],
         warn: "yellow",
         info: "blue",
-        log: "gray",
+        log: "white",
         success: "green",
         highlight: ["black", "bgYellow"]
     }
