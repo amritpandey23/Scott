@@ -2,7 +2,8 @@ const path = require("path");
 
 module.exports = {
     PATHS: {
-        LOG_FILE: path.resolve(__dirname, "../logs/activity.log")
+        RUNTIME_LOG: path.resolve(__dirname, "../logs/runtime.log"),
+        ACTIVITY_LOG: path.resolve(__dirname, "../logs/activity.log")
     },
     LOG_COLOR_SCHEME: {
         error: ["red", "bold"],
