@@ -1,3 +1,5 @@
-module.exports = {
-    settings: require("./settings")
-}
+const
+    settings = require("./settings"),
+    responses = require(settings.PATHS.RESPONSES);
+
+module.exports = { settings, responses };
