@@ -11,6 +11,7 @@ node_modules/
 # credentials and private config
 config.json
 api_keys.json
+credentials.json
 
 # compile directory
 dist/
