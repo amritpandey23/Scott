@@ -1,30 +1,30 @@
 {
-    "error_messages": [
-        "uh oh ... what have you done?",
-        "nO! yOu BrOkE meEE!",
-        "something bad has happend.",
-        "!internal system malfunction!"
-    ],
-    "member_join": [
-        "@user, welcome to our little corner of hell!",
-		"@user has joined the server.",
-		"@user, you're gonna have a jolly good time here!",
-		"@user is new here.", 
-		"@user is here, everybody!",
-		"@user sends his/her regards.",
-		"@user, welcome to the server!",
-		"@user is our next victim...",
-		"Hello @user!",
-		"Please welcome our newest member, @user"
-    ],
-    "member_remove": [
-        "@user has left us :slight_frown:",
-		"Goodbye @user",
-		"@user Come back!",
-		"@user is gone *cries*",
-		"@user has left the server",
-		"RIP @user",
-		"Uh-oh, @user went away",
-		"Please convince @user to come back!"
-    ]
+  "error_messages": [
+    "uh oh ... what have you done?",
+    "nO! yOu BrOkE meEE!",
+    "something bad has happend.",
+    "!internal system malfunction!"
+  ],
+  "member_join": [
+    "@user, welcome to our little corner of hell!",
+    "@user has joined the server.",
+    "@user, you're gonna have a jolly good time here!",
+    "@user is new here.",
+    "@user is here, everybody!",
+    "@user sends his/her regards.",
+    "@user, welcome to the server!",
+    "@user is our next victim...",
+    "Hello @user!",
+    "Please welcome our newest member, @user"
+  ],
+  "member_remove": [
+    "@user has left us :slight_frown:",
+    "Goodbye @user",
+    "@user Come back!",
+    "@user is gone *cries*",
+    "@user has left the server",
+    "RIP @user",
+    "Uh-oh, @user went away",
+    "Please convince @user to come back!"
+  ]
 }

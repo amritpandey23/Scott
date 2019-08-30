@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node start.js",
     "deploy": "gcloud app deploy",
-    "watch": "nodemon start.js --ignore 'data/**/*.json'"
+    "watch": "nodemon start.js --ignore 'data/**/*.json'",
+    "setup": "node src/config/setup.js"
   },
   "repository": "gitlab:amritpandey/discord-bot",
   "keywords": [
@@ -17,7 +18,10 @@
   "author": "Amrit Pandey <pandey.amrit@outlook.com> (https://amritpandey.dev)",
   "license": "MIT",
   "dependencies": {
+    "clear": "^0.1.0",
     "discord.js": "^11.4.2",
+    "figlet": "^1.2.3",
+    "inquirer": "^7.0.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "rss-parser": "^3.7.0"

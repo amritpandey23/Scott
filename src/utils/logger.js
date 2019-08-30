@@ -17,7 +17,7 @@ let colorScheme = settings.LOG_COLOR_SCHEME;
 colors.setTheme(colorScheme);
 
 /** write() saves log messages in file. */
-function write(logFile=settings.PATHS.RUNTIME_LOG, ...args) {
+function write(logFile=settings.PATHS.LOGS, ...args) {
   let line = `[${(new Date()).toISOString()}] `;      // time 
   line += args.join(' ');                             // message
   line += '\n';
@@ -29,7 +29,7 @@ function write(logFile=settings.PATHS.RUNTIME_LOG, ...args) {
 
 /** print() logs colored messages on console. */
 function print(type, ...args) {
-  write(logFile=settings.PATHS.RUNTIME_LOG, type.toUpperCase(), args.join(' '));
+  write(logFile=`${settings.PATHS.LOGS}/runtime.log`, type.toUpperCase(), args.join(' '));
   return console.log(colors[colorScheme[type] ? type : "white"](args.join(' ')));
 }
 

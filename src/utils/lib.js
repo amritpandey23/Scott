@@ -1,3 +1,6 @@
+const
+fs = require("fs");
+
 module.exports = {
 
   /** randomNumber() generates random number including min, max */
