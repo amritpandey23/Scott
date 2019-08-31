@@ -13,5 +13,10 @@ module.exports = {
     log: "white",
     success: "green",
     highlight: ["black", "bgYellow"]
+  },
+  ACCESS_LEVELS: {
+    all: 0,
+    mod: 1,
+    admin: 2
   }
 }
