@@ -1,31 +1,51 @@
 const
   fs = require("fs"),
   { logger } = require("../utils"),
-  { PATHS } = require("./settings");
+  settings = require("./settings");
 
-function getCredentials() {
+class ConfigManager {
 
-  try {
-    let s = fs.statSync(PATHS.CREDENTIALS);
-  } catch (err) {
-    logger.error("Credential file does not exists.");
-    logger.log("Use `npm run setup` to create one.");
-    return false;
+  constructor() {
+    let credentials;
+    try {
+      credentials = require("./credentials.json");
+    } catch (err) {
+      credentials = undefined;
+      this.fileMissing();
+    }
+    this.credentials = credentials;
   }
 
-  return require(PATHS.CREDENTIALS);
+  fileMissing() {
+    return logger.warn([
+      "It looks like you do not have a credentials file.",
+      "You need to run setup before running the bot.",
+      "Use `npm run setup` to store credentials. Thank you."
+    ].join('\n'));
+  }
+
+  getValue(name) {
+    if (!this.credentials) {
+      return null;
+    }
+    let [field, prop] = name.split('_');
+    return this.credentials[field][prop];
+  }
+
+  setValue(name, value) {
+    if (!this.credentials) {
+      return false;
+    }
+    let [field, prop] = name.split('_');
+    this.credentials[field][prop] = value;
+    fs.writeFile(settings.PATHS.CREDENTIALS,
+      JSON.stringify(this.credentials),
+      (err) => {
+        if (err)
+          return logger.error(err);
+      });
+  }
+
 }
 
-function getValue(name) {
-
-  let credentials = getCredentials();
-  
-  if(!credentials)
-    return;
-  
-  let [ field, prop ] = name.split('_');
-  return credentials[field][prop];
-
-}
-
-getValue("bot_token");
+module.exports = new ConfigManager();

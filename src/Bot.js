@@ -1,7 +1,8 @@
-const { Client } = require('discord.js');
-const { Auth, Utils } = require('./modules');
-const events = require("./events/events.registry");
-const EventHandler = require('./events/EventHandler');
+const 
+  { Client } = require('discord.js'),
+  { Config } = require("./config"),
+  events = require("./events/events.registry"),
+  EventHandler = require('./events/EventHandler');
 
 class Bot {
 
@@ -25,7 +26,7 @@ class Bot {
 
   start() {
     Utils.createLogFiles();
-    this._client.login(Auth.botToken);
+    this._client.login(Config.getValue("bot_token"));
   }
 }
 

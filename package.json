@@ -5,7 +5,7 @@
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node start.js",
+    "start": "node index.js",
     "deploy": "gcloud app deploy",
     "watch": "nodemon start.js --ignore 'data/**/*.json'",
     "setup": "node src/config/setup.js"
